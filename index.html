@@ -8,31 +8,57 @@ Custom Hoodies
 <body>
 <h1>Welcome to Custom Hoodies!</h1>
 <hr>
-<image src="hoodie1.jpg" width = 200></image>
-<h5>The first hoodie option</h5>
-<image src="hoodie2.jpg" width = 200></image>
-<h5>The second hoodie option</h5>
-<image src="hoodie3.jpg" width = 200></image>
-<h5>The third hoodie option</h5>
+<img src="hoodie1.jpg" width = 200></img>
+<h5>$39.99</h5>
+<img src="hoodie2.jpg" width = 200></img>
+<h5>$29.95</h5>
+<img src="hoodie3.jpg" width = 200></img>
+<h5>$30.00</h5>
 
-<form>
-    <label>Pick which hoodie you want!</label>
+<form id="hoodieForm" onsubmit="displayPrice(event)">
+    <label for="hoodie">Pick which hoodie you want!</label>
     
     <select id="hoodie" name = "hoodie">
-    <option value="Hoodie 1">Hoodie 1</option>
-    <option value="Hoodie 2">Hoodie 2</option>
-    <option value="Hoodie 3">Hoodie 3</option>
+    <option value="hoodie1">Hoodie 1</option>
+    <option value="hoodie2">Hoodie 2</option>
+    <option value="hoodie3">Hoodie 3</option>
     </select>
-    
-    <br>
+
     <br>
     <hr>
-        <input type="submit"></input>
+        <input type="submit" value="submit"></input>
 
+  <p id="output"></p>
+
+
+
+
+    <script>
+        function displayPrice(event){
+        const hoodie = document.getElementById('hoodie').value;
+        event.preventDefault();
+        let price = "";
+        switch(hoodie)
+        {
+            case "hoodie1":
+                price = "$39.99";
+                break;
+            case "hoodie2":
+                price = "$29.95";
+                break;
+            case "hoodie3":
+                price = "$30.00";
+                break;
+            default:
+                price = "Price not determined.";
+        }
+        document.getElementById('output').textContent = `You owe ${price}`;
+        }
+    </script>
 
 </form>
 
-
+<a href="page2.html" title="This link takes you to the payment page...">Pay</a>
     
 </body>
 
