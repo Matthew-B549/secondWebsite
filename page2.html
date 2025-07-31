@@ -1,11 +1,40 @@
 <!DOCTYPE html>
 <html>
     <head>This is the payment page</head>
-
+    <hr>
     <body>
 
+        <p id="printPrice"></p>
+        <script>
+            price = localStorage.getItem("price");
+            document.getElementById("printPrice").textContent = `You have to pay: ${price}`;
+        </script>
 
+<form>
+<label for="fname">First Name:</label>
+<input type="text" id="fname" name="fname" placeholder="John" required>
+<br>
+<br>
+<label for="lname">Last Name:</label>
+<input type="text" id="lname" name="fname" placeholder="Doe" required>
+<br>
+<br>
+<label for="email">Email:</label>
+<input type="email" id="email" name="email" placeholder="johndoe@gmail.com" required>
+<br>
+<br>
+<label for="payment">Payment Type</label>
+<select id="payment" name="payment" required>
+    <option value="visa">Visa</option>
+    <option value="mastercard">Mastercard</option>
+    <option value="paypal">Paypal</option>
+</select>
 
+<br>
+<br>
+<input type = submit>
+
+</form>
 
 
     </body>

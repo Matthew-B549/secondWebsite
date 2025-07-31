@@ -52,6 +52,7 @@ Custom Hoodies
             default:
                 price = "Price not determined.";
         }
+        localStorage.setItem("price", price);
         document.getElementById('output').textContent = `You owe ${price}`;
         }
     </script>
